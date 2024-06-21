@@ -1,7 +1,7 @@
 ## Task Manager Application (MERN Stack)
 
 # Overview
-This is a Task Manager Application built using the MERN stack (MongoDB, Express.js, React, Node.js) with Vite.js as the frontend build tool. It allows users to manage tasks effectively with CRUD operations.
+This is a Task Manager Application built using the MERN stack (MongoDB, Express.js, React, Node.js). It allows users to manage tasks effectively with CRUD operations.
 
 # Features
 - Task management (create, read, update, delete tasks)
