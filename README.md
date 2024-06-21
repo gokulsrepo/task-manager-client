@@ -12,7 +12,7 @@ To run this application locally, follow these steps:
 
 Clone the repository:
 ```
-git clone [<repository-url>](https://github.com/gokulsrepo/task-manager-client.git)
+git clone https://github.com/gokulsrepo/task-manager-client.git
 cd task-manager-client
 ```
 Install dependencies:
