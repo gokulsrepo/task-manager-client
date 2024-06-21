@@ -1,0 +1,13 @@
+.hover-effect {
+    padding: 4px;
+    background-color: #000000;
+    border: 1px solid #010101;
+    border-radius: 8px;
+    transition: transform 0.3s ease; 
+  }
+  
+  .hover-effect:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  
