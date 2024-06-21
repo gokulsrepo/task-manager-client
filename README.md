@@ -37,4 +37,4 @@ npm run dev
 ```
 Your front-end will be running at http://localhost:5173/.
 
-Before accessing the application complete the installation for backend. (https://github.com/gokulsrepo/task-manager-server)
+Before accessing the application, make sure you have completed the installation for back-end. (https://github.com/gokulsrepo/task-manager-server)
