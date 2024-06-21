@@ -7,6 +7,10 @@ This is a Task Manager Application built using the MERN stack (MongoDB, Express.
 - Task management (create, read, update, delete tasks)
 - Responsive UI for desktop and mobile
 
+# Required Applications
+- Node.js
+- MongoDB Atlas Account
+
 # Setup Locally (for front-end)
 To run this application locally, follow these steps:
 
