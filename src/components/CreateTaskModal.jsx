@@ -53,7 +53,7 @@ const CreateTaskModal = ({
           <br />
           <Stack gap={3}>
             <label>Description</label>
-            <input
+            <textarea
               type="text"
               placeholder="Description"
               value={description}

@@ -91,7 +91,7 @@ const UpdateTaskModal = ({
           <br />
           <Stack gap={2}>
             <label>Description</label>
-            <input
+            <textarea
               type="text"
               placeholder="Description"
               value={description}
