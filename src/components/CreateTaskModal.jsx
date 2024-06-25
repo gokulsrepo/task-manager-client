@@ -46,6 +46,7 @@ const CreateTaskModal = ({
             <input
               type="text"
               placeholder="Title"
+              required
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
@@ -56,6 +57,7 @@ const CreateTaskModal = ({
             <textarea
               type="text"
               placeholder="Description"
+              required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -65,6 +67,7 @@ const CreateTaskModal = ({
             <label>Due Date</label>
             <input
               type="date"
+              required
               value={dueDate}
               onChange={(e) => setDueDate(e.target.value)}
             />
