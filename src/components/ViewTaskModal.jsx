@@ -2,31 +2,35 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button, Modal, Stack } from "react-bootstrap";
 import API_URL from "../global";
-var date;
-var status_cap;
 
-const ViewTaskModal = ({ showViewModal, handleViewModalClose, id }) => {
-  const [task, setTask] = useState([]);
+const ViewTaskModal = ({ showViewModal, handleViewModalClose, id, }) => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [formattedDueDate ,setFormattedDueDate] = useState("");
+  const [formattedStatus ,setFormattedStatus] = useState("");
+
   useEffect(() => {
     const getSingleTask = async () => {
       await axios
         .get(`${API_URL}/api/v1/task/single/${id}`)
         .then((res) => {
-          setTask(res.data.task);
-          var parts = res.data.task.dueDate.slice(0,10).split(/\D/);
-          date = `${parts[2]}-${parts[1]}-${parts[0]}`;
-          status_cap = res.data.task.status.replace(/^\w/, c => c.toUpperCase());
+          const parts = res.data.task.dueDate.slice(0, 10).split(/\D/);
+          const date = `${parts[2]}-${parts[1]}-${parts[0]}`;
+          const statusCapitalize = res.data.task.status.replace(/^\w/, c => c.toUpperCase());
+          setTitle(res.data.task.title);
+          setDescription(res.data.task.description);
+          setFormattedDueDate(date);
+          setFormattedStatus(statusCapitalize)
         })
         .catch((error) => {
-          console.log(error.response.data.message);
+          console.log(error);
         });
     };
     if (id) {
       getSingleTask();
     }
   }, [id]);
-  
-  
+
   return (
     <>
       <Modal show={showViewModal} onHide={handleViewModalClose}>
@@ -36,19 +40,19 @@ const ViewTaskModal = ({ showViewModal, handleViewModalClose, id }) => {
         <Modal.Body>
           <Stack>
             <p className="fw-bold mb-0">Title</p>
-            <p>{task && task.title}</p>
+            <p>{title}</p>
           </Stack>
           <Stack>
             <p className="fw-bold mb-0">Description</p>
-            <p>{task && task.description}</p>
+            <p>{description}</p>
           </Stack>
           <Stack>
             <p className="fw-bold mb-0">Due Date</p>
-            <p>{task && date}</p>
+            <p>{formattedDueDate}</p>
           </Stack>
           <Stack>
             <p className="fw-bold mb-0">Status</p>
-            <p>{task && status_cap}</p>
+            <p>{formattedStatus}</p>
           </Stack>
           <Stack>
             <p className="fw-bold mb-0">Note</p>

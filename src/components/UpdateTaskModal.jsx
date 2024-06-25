@@ -36,16 +36,9 @@ const UpdateTaskModal = ({
   }, [id]);
 
   const handleUpdateTask = async () => {
+    const updatedTask = {title, description, status, dueDate}
     await axios
-      .put(
-        `${API_URL}/api/v1/task/update/${id}`,
-        {
-          title,
-          description,
-          status,
-          dueDate,
-        },
-      )
+      .put(`${API_URL}/api/v1/task/update/${id}`, updatedTask)
       .then((res) => {
         toast.success(res.data.message);
 
@@ -67,6 +60,7 @@ const UpdateTaskModal = ({
         });
         handleUpdateModalClose();
       })
+
       .catch((error) => {
         toast.error(error.response.data.message);
       });

@@ -14,6 +14,11 @@ const CreateTaskModal = ({
   const [dueDate, setDueDate] = useState("");
 
   const handleCreateTask = async () => {
+    if (!title.trim() || !description.trim() || !dueDate.trim()) {
+      toast.error("Please fill out all fields.");
+      return;
+    }
+    
     await axios
       .post(
         `${API_URL}/api/v1/task/post`,
