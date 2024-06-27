@@ -67,7 +67,7 @@ const Home = ({ tasks, setTasks, taskTitle }) => {
       <div className="row mb-3">
         <div className="col">
           <h1>{taskTitle}</h1>
-          <p>Made by Gokul B</p>
+          <p>Made by Gokul</p>
         </div>
         <div className="col text-end">
           <Button variant="light" onClick={handleCreateModalShow}>
